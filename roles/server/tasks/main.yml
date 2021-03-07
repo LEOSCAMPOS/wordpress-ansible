@@ -1,0 +1,16 @@
+
+---
+# tasks file for server
+ - name: Atualiza o cache apt de nosso servidor
+   apt: update_cache=yes cache_valid_time=3600
+ - name: "instalação dos pacotes para Wordpress"
+   apt:
+      name:
+        - apache2
+        - mysql-server
+        - php-mysql
+        - php
+        - libapache2-mod-php
+        - mcrypt
+        - python3-mysqldb
+      state: present

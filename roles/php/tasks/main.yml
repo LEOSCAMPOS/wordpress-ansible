@@ -1,0 +1,7 @@
+---
+# tasks file for php
+ - name: Instala as extensoes PHP necessarias
+   apt: name={{ item }} state=present
+   with_items:
+   - php-gd
+   - php-ssh2
