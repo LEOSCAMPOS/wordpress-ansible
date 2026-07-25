@@ -1,7 +1,11 @@
 ---
 # tasks file for php
- - name: Instala as extensoes PHP necessarias
-   apt: name={{ item }} state=present
-   with_items:
-   - php-gd
-   - php-ssh2
+- name: Instala as extensões PHP necessárias
+  apt:
+    name:
+      - php-gd
+      - php-ssh2
+      - php-curl
+      - php-xml
+      - php-mbstring
+    state: present

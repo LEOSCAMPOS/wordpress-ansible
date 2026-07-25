@@ -1,0 +1,12 @@
+---
+# Variáveis Globais para o Deploy do WordPress via Ansible
+
+# Configurações do Banco de Dados MySQL
+wp_mysql_db: "wordpress"
+wp_mysql_user: "wordpress"
+wp_mysql_password: "wp_db_password"
+
+# Configurações de Servidor e Diretórios
+wp_install_dir: "/var/www/wordpress"
+wp_owner_user: "leonardo"
+wp_owner_group: "www-data"

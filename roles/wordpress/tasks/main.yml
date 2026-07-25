@@ -1,42 +1,46 @@
 ---
 # tasks file for wordpress
- - name: Baixa o WordPress
-   get_url: 
-    url=https://wordpress.org/latest.tar.gz
-    dest=/tmp/wordpress.tar.gz
-    validate_certs=no
- - name: Descompacta o WordPress
-   unarchive: 
-    src=/tmp/wordpress.tar.gz 
-    dest=/var/www/ 
-    copy=no
- - name: Modifica permissao pasta wordpress
-   file:
-    path: /var/www/wordpress
-    owner: leonardo
-    group: www-data
+- name: Baixa a versão mais recente do WordPress
+  get_url:
+    url: "https://wordpress.org/latest.tar.gz"
+    dest: "/tmp/wordpress.tar.gz"
+    validate_certs: no
+
+- name: Descompacta o arquivo do WordPress
+  unarchive:
+    src: "/tmp/wordpress.tar.gz"
+    dest: "/var/www/"
+    remote_src: yes
+
+- name: Ajusta permissões e proprietário da pasta WordPress
+  file:
+    path: "{{ wp_install_dir }}"
+    owner: "{{ wp_owner_user }}"
+    group: "{{ wp_owner_group }}"
     mode: "0755"
     recurse: yes
- - name: Atualiza o site Apache padrao
-   lineinfile:
-    dest=/etc/apache2/sites-enabled/000-default.conf
-    regexp="(.)+DocumentRoot /var/www/html"
-    line="DocumentRoot /var/www/wordpress"
-   notify:
+
+- name: Atualiza a configuração do VirtualHost padrão do Apache
+  lineinfile:
+    path: "/etc/apache2/sites-enabled/000-default.conf"
+    regexp: "(.)+DocumentRoot /var/www/html"
+    line: "DocumentRoot {{ wp_install_dir }}"
+  notify:
     - reinicia apache
- - name: Renomeia o arquivo de configuracao de exemplo
-   command: mv /var/www/wordpress/wp-config-sample.php /var/www/wordpress/wp-config.php creates=/var/www/wordpress/wp-config.php
- - name: Atualiza a configuracao WordPress
-   lineinfile:
-    dest: /var/www/wordpress/wp-config.php
-    #regexp: 'database_name_here'
-    #line: "define('DB_NAME', '{{wp_mysql_db}}');"
-    state: present
-    backup: yes
-    backrefs: yes
+
+- name: Copia o arquivo wp-config-sample.php para wp-config.php
+  command: "cp {{ wp_install_dir }}/wp-config-sample.php {{ wp_install_dir }}/wp-config.php"
+  args:
+    creates: "{{ wp_install_dir }}/wp-config.php"
+
+- name: Configura os parâmetros de acesso ao banco de dados no wp-config.php
+  lineinfile:
+    path: "{{ wp_install_dir }}/wp-config.php"
     regexp: "{{ item.regexp }}"
     line: "{{ item.line }}"
-   with_items:
-    - {regexp: 'database_name_here', line: "define('DB_NAME', '{{wp_mysql_db}}');"}
-    - {regexp: 'username_here', line: "define('DB_USER', '{{wp_mysql_user}}');"}
-    - {regexp: 'password_here', line: "define('DB_PASSWORD', '{{wp_mysql_password}}');"}
+    state: present
+    backup: yes
+  loop:
+    - { regexp: "database_name_here", line: "define('DB_NAME', '{{ wp_mysql_db }}');" }
+    - { regexp: "username_here", line: "define('DB_USER', '{{ wp_mysql_user }}');" }
+    - { regexp: "password_here", line: "define('DB_PASSWORD', '{{ wp_mysql_password }}');" }

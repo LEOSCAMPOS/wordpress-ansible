@@ -1,0 +1,13 @@
+# Variáveis de ambiente sensíveis
+.env
+
+# Ansible temporary and retry files
+*.retry
+*.log
+.vault_pass
+
+# OS and Editor files
+.DS_Store
+.vscode/
+*.swp
+*.tmp
