@@ -8,4 +8,6 @@
       - php-curl
       - php-xml
       - php-mbstring
+      - php-zip
+      - php-intl
     state: present

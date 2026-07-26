@@ -9,5 +9,5 @@
   mysql_user:
     name: "{{ wp_mysql_user }}"
     password: "{{ wp_mysql_password }}"
-    priv: "*.*:ALL"
+    priv: "{{ wp_mysql_db }}.*:ALL"
     state: present

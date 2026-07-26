@@ -4,7 +4,8 @@
   get_url:
     url: "https://wordpress.org/latest.tar.gz"
     dest: "/tmp/wordpress.tar.gz"
-    validate_certs: no
+    validate_certs: yes
+
 
 - name: Descompacta o arquivo do WordPress
   unarchive:
@@ -44,3 +45,23 @@
     - { regexp: "database_name_here", line: "define('DB_NAME', '{{ wp_mysql_db }}');" }
     - { regexp: "username_here", line: "define('DB_USER', '{{ wp_mysql_user }}');" }
     - { regexp: "password_here", line: "define('DB_PASSWORD', '{{ wp_mysql_password }}');" }
+    - { regexp: "DISALLOW_FILE_EDIT", line: "define('DISALLOW_FILE_EDIT', true);" }
+
+- name: Cria a pasta do plugin LSCIT Cyber Trilha Auth Gate
+  file:
+    path: "{{ wp_install_dir }}/wp-content/plugins/lscit-trilha-auth-gate"
+    state: directory
+    owner: "{{ wp_owner_user }}"
+    group: "{{ wp_owner_group }}"
+    mode: "0755"
+
+- name: Copia os arquivos do plugin LSCIT Cyber para a pasta do WordPress
+  copy:
+    src: "{{ item }}"
+    dest: "{{ wp_install_dir }}/wp-content/plugins/lscit-trilha-auth-gate/"
+    owner: "{{ wp_owner_user }}"
+    group: "{{ wp_owner_group }}"
+    mode: "0644"
+  loop:
+    - "{{ playbook_dir }}/lscit-trilha-auth-gate.php"
+    - "{{ playbook_dir }}/lscit-cyber-theme.css"
