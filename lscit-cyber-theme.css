@@ -1,0 +1,345 @@
+/* 
+   ==========================================================================
+   LSCIT CYBER - DESIGN SYSTEM, HEADER, NAVIGATION & VISUAL EFFECTS
+   ==========================================================================
+*/
+
+/* 1. Global Reset & Dark Theme */
+body, .site, .site-content, main, article {
+    background-color: #0D0D11 !important;
+    color: #E2E8F0 !important;
+    font-family: 'Inter', 'Google Sans', 'Roboto', system-ui, sans-serif !important;
+}
+
+/* Links Global Style (Sem sublinhado por padrão) */
+a {
+    color: #FF4D4D;
+    text-decoration: none !important;
+    transition: all 0.2s ease-in-out;
+}
+a:hover, a:focus {
+    color: #FF7777;
+    text-decoration: none !important;
+    text-shadow: 0 0 8px rgba(255, 77, 77, 0.4);
+}
+
+/* Classe utilitária para remover sublinhado de elementos específicos */
+.no-underline, a.no-underline {
+    text-decoration: none !important;
+}
+
+
+/* 2. HEADER & NAVIGATION BAR */
+.site-header, header, .wp-block-template-part, .header-container {
+    background-color: #121218 !important;
+    border-bottom: 2px solid #FF4D4D !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6) !important;
+    padding: 10px 24px !important;
+}
+
+/* Header Flex Container */
+.header-wrapper, .site-header .inside-header, .wp-block-navigation {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    width: 100% !important;
+    max-width: 1300px !important;
+    margin: 0 auto !important;
+}
+
+/* Menu Items horizontal row */
+.main-navigation ul, .wp-block-navigation-items {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    align-items: center !important;
+    gap: 16px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    list-style: none !important;
+}
+
+.main-navigation li, .wp-block-navigation-item {
+    white-space: nowrap !important;
+    position: relative !important;
+}
+
+.main-navigation a, .wp-block-navigation-item__label {
+    color: #F1F5F9 !important;
+    font-size: 0.95rem !important;
+    font-weight: 600 !important;
+    padding: 8px 14px !important;
+    border-radius: 6px !important;
+    transition: all 0.25s ease !important;
+}
+
+.main-navigation a:hover, 
+.wp-block-navigation-item:hover > .wp-block-navigation-item__content,
+.wp-block-navigation-item__label:hover {
+    color: #FF4D4D !important;
+    background-color: rgba(255, 77, 77, 0.1) !important;
+    box-shadow: 0 0 10px rgba(255, 77, 77, 0.2) !important;
+}
+
+/* 3. SUBMENUS (DROPDOWN ON HOVER) */
+.main-navigation ul ul, 
+.wp-block-navigation-submenu, 
+.sub-menu, 
+.wp-block-navigation__submenu-container {
+    display: none !important;
+    position: absolute !important;
+    top: 100% !important;
+    left: 0 !important;
+    background-color: #1A1A24 !important;
+    border: 1px solid #2D2D3A !important;
+    border-top: 3px solid #FF4D4D !important;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.85), 0 0 15px rgba(255, 77, 77, 0.15) !important;
+    border-radius: 0 0 8px 8px !important;
+    z-index: 99999 !important;
+    min-width: 240px !important;
+    padding: 8px 0 !important;
+    flex-direction: column !important;
+}
+
+/* Exibir submenu no hover */
+.main-navigation li:hover > ul, 
+.wp-block-navigation-item:hover > .wp-block-navigation__submenu-container,
+.menu-item-has-children:hover > .sub-menu,
+.has-child:hover > .wp-block-navigation__submenu-container {
+    display: flex !important;
+    animation: fadeInMenu 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.sub-menu li, .wp-block-navigation__submenu-container .wp-block-navigation-item {
+    width: 100% !important;
+}
+
+.sub-menu a, .wp-block-navigation__submenu-container .wp-block-navigation-item__label {
+    display: block !important;
+    padding: 10px 18px !important;
+    font-size: 0.9rem !important;
+    color: #CBD5E1 !important;
+    border-radius: 0 !important;
+}
+
+.sub-menu a:hover, .wp-block-navigation__submenu-container .wp-block-navigation-item__label:hover {
+    color: #FFFFFF !important;
+    background-color: rgba(255, 77, 77, 0.2) !important;
+    padding-left: 22px !important;
+}
+
+/* Remover botões toggle desnecessários no desktop */
+.wp-block-navigation-submenu__toggle, 
+.menu-toggle,
+.dropdown-menu-toggle {
+    display: none !important;
+}
+
+/* 4. BUTTONS & CYBER HOVER GLOW EFFECTS */
+.wp-block-button__link, button, input[type="submit"], .btn-cyber {
+    background: linear-gradient(135deg, #FF4D4D 0%, #CC0000 100%) !important;
+    color: #FFFFFF !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.5px !important;
+    border-radius: 6px !important;
+    padding: 12px 24px !important;
+    border: 1px solid #FF6666 !important;
+    box-shadow: 0 4px 15px rgba(255, 77, 77, 0.3) !important;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    text-transform: uppercase !important;
+    font-size: 0.85rem !important;
+}
+
+.wp-block-button__link:hover, button:hover, input[type="submit"]:hover, .btn-cyber:hover {
+    background: linear-gradient(135deg, #FF6666 0%, #FF1A1A 100%) !important;
+    transform: translateY(-2px) scale(1.02) !important;
+    box-shadow: 0 6px 25px rgba(255, 77, 77, 0.6), 0 0 15px rgba(255, 255, 255, 0.2) !important;
+    color: #FFFFFF !important;
+}
+
+/* 5. CARDS, GROUPS & CONTAINERS (DARK GLASSMORPHISM, GLOW & EQUAL HEIGHT) */
+.wp-block-columns {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 24px !important;
+    align-items: stretch !important;
+    margin-top: 30px !important;
+    margin-bottom: 30px !important;
+    width: 100% !important;
+}
+
+/* Visual dos Cards aplicado a TODAS as Colunas Gutenberg */
+.wp-block-column, .card-cyber {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-start !important;
+    align-items: center !important;
+    flex: 1 1 280px !important;
+    height: 100% !important;
+    background-color: #14141F !important;
+    border: 1px solid #2A2A3A !important;
+    border-radius: 12px !important;
+    padding: 24px 20px !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5) !important;
+    box-sizing: border-box !important;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+/* Efeito de Elevação Hover e Brilho Neon Vermelho */
+.wp-block-column:hover, .card-cyber:hover {
+    transform: translateY(-6px) !important;
+    border-color: #FF4D4D !important;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.8), 0 0 25px rgba(255, 77, 77, 0.35) !important;
+}
+
+/* Igualar a altura das imagens APENAS DENTRO DAS COLUNAS/CARDS */
+.wp-block-column .wp-block-image img, 
+.wp-block-column figure img,
+.wp-block-column > img,
+.card-cyber img {
+    width: 100% !important;
+    height: 220px !important;
+    max-height: 220px !important;
+    object-fit: cover !important;
+    object-position: center !important;
+    border-radius: 8px !important;
+    display: block !important;
+    margin: 0 0 16px 0 !important;
+}
+
+.wp-block-column .wp-block-image, 
+.wp-block-column figure {
+    margin: 0 0 16px 0 !important;
+    width: 100% !important;
+    height: 220px !important;
+    overflow: hidden !important;
+    border-radius: 8px !important;
+}
+
+/* BANNERS PRINCIPAIS, HERO IMAGES E LOGOS (Preservar proporção natural sem corte) */
+body > .wp-block-image img,
+main > .wp-block-image img,
+article > .wp-block-image img,
+.wp-block-image.alignfull img,
+.wp-block-image.alignwide img,
+.wp-block-cover img,
+.site-header img,
+header img {
+    height: auto !important;
+    max-height: none !important;
+    width: 100% !important;
+    object-fit: contain !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+}
+
+/* Legibilidade e contraste dos Títulos dos Cards */
+.wp-block-column h1, .wp-block-column h2, .wp-block-column h3, .wp-block-column h4,
+.card-cyber h1, .card-cyber h2, .card-cyber h3, .card-cyber h4 {
+    color: #FF4D4D !important;
+    font-size: 1.25rem !important;
+    font-weight: 700 !important;
+    margin-top: 8px !important;
+    margin-bottom: 10px !important;
+    text-align: center !important;
+    width: 100% !important;
+}
+
+.wp-block-column a, .card-cyber a {
+    color: #FF4D4D !important;
+    text-decoration: none !important;
+    transition: color 0.2s ease !important;
+}
+
+.wp-block-column a:hover, .card-cyber a:hover {
+    color: #FF7777 !important;
+    text-shadow: 0 0 10px rgba(255, 77, 77, 0.6) !important;
+}
+
+.wp-block-column p, .card-cyber p {
+    color: #CBD5E1 !important;
+    font-size: 0.9rem !important;
+    line-height: 1.5 !important;
+    text-align: center !important;
+    flex-grow: 1 !important;
+    margin-bottom: 16px !important;
+    width: 100% !important;
+}
+
+.wp-block-column .wp-block-buttons, .card-cyber .wp-block-buttons {
+    margin-top: auto !important;
+    width: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+}
+
+
+
+
+/* Hero Box Styling */
+.lscit-hero-box {
+    background: linear-gradient(180deg, #1A1A28 0%, #12121A 100%) !important;
+    border: 1px solid #2D2D40 !important;
+    border-radius: 16px !important;
+    padding: 40px 30px !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(255, 77, 77, 0.1) !important;
+    margin-bottom: 40px !important;
+    text-align: center !important;
+}
+
+
+/* 6. SEARCH BAR FIX & STYLING */
+.search-form, .wp-block-search {
+    display: inline-flex !important;
+    align-items: center !important;
+    max-height: 38px !important;
+    margin: 0 !important;
+}
+
+.search-field, .wp-block-search__input {
+    height: 38px !important;
+    background-color: #1A1A24 !important;
+    color: #FFFFFF !important;
+    border: 1px solid #333344 !important;
+    border-radius: 6px 0 0 6px !important;
+    padding: 6px 14px !important;
+    font-size: 0.85rem !important;
+    outline: none !important;
+}
+
+.search-field:focus, .wp-block-search__input:focus {
+    border-color: #FF4D4D !important;
+    box-shadow: 0 0 8px rgba(255, 77, 77, 0.4) !important;
+}
+
+.search-submit, .wp-block-search__button {
+    height: 38px !important;
+    line-height: 38px !important;
+    background: #FF4D4D !important;
+    color: #FFFFFF !important;
+    font-size: 0.8rem !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    padding: 0 16px !important;
+    border: none !important;
+    border-radius: 0 6px 6px 0 !important;
+    cursor: pointer !important;
+    transition: all 0.2s ease !important;
+}
+
+.search-submit:hover, .wp-block-search__button:hover {
+    background: #FF6666 !important;
+    box-shadow: 0 0 12px rgba(255, 77, 77, 0.5) !important;
+}
+
+/* 7. ANIMATIONS */
+@keyframes fadeInMenu {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+

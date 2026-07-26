@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0"
+	xmlns:excerpt="http://wordpress.org/export/1.2/excerpt/"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:wp="http://wordpress.org/export/1.2/"
+>
+<channel>
+	<title>LSCIT Cyber</title>
+	<link>http://localhost:8080</link>
+	<description>Uma iniciativa dedicada a contribuir com uma internet mais segura para todos</description>
+	<pubDate>2026-07-26 10:45:58</pubDate>
+	<language>pt-BR</language>
+	<wp:wxr_version>1.2</wp:wxr_version>
+	<wp:base_site_url>http://localhost:8080</wp:base_site_url>
+	<wp:base_blog_url>http://localhost:8080</wp:base_blog_url>
+
+	<!-- 1. PAGE: HOME -->
+	<item>
+		<title>Home</title>
+		<link>http://localhost:8080/</link>
+		<pubDate>2026-07-26 10:45:58</pubDate>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<guid isPermaLink="false">http://localhost:8080/?page_id=10</guid>
+		<content:encoded><![CDATA[
+<!-- wp:group {"className":"lscit-hero-box","layout":{"type":"constrained"}} -->
+<div class="wp-block-group lscit-hero-box">
+	<!-- wp:heading {"level":1,"textAlign":"center","style":{"color":{"text":"#ff4d4d"}},"fontSize":"x-large"} -->
+	<h1 class="wp-block-heading has-text-align-center has-x-large-font-size" style="color:#ff4d4d">LSCIT CYBER</h1>
+	<!-- /wp:heading -->
+
+	<!-- wp:paragraph {"align":"center","fontSize":"large"} -->
+	<p class="has-text-align-center has-large-font-size">Uma iniciativa dedicada a contribuir com uma internet mais segura para todos.</p>
+	<!-- /wp:paragraph -->
+
+	<!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center"}} -->
+	<div class="wp-block-buttons">
+		<!-- wp:button {"className":"btn-cyber"} -->
+		<div class="wp-block-button btn-cyber"><a class="wp-block-button__link" href="/trilha-challenge-1nf053c">🚀 Iniciar Trilha de Segurança</a></div>
+		<!-- /wp:button -->
+		<!-- wp:button {"className":"is-style-outline"} -->
+		<div class="wp-block-button is-style-outline"><a class="wp-block-button__link" href="/defesa-digital">🛡️ Defesa Digital</a></div>
+		<!-- /wp:button -->
+	</div>
+	<!-- /wp:buttons -->
+</div>
+<!-- /wp:group -->
+
+<!-- wp:spacer {"height":"40px"} -->
+<div style="height:40px" aria-hidden="true" class="wp-block-spacer"></div>
+<!-- /wp:spacer -->
+
+<!-- wp:columns {"className":"lscit-card-grid"} -->
+<div class="wp-block-columns lscit-card-grid">
+	<!-- wp:column {"className":"card-cyber"} -->
+	<div class="wp-block-column card-cyber">
+		<!-- wp:heading {"level":3} -->
+		<h3><a href="/defesa-digital" style="text-decoration:none;color:#ff4d4d;">🛡️ Defesa Digital</a></h3>
+		<!-- /wp:heading -->
+		<!-- wp:paragraph -->
+		<p>Dicas essenciais e boas práticas para proteger sua identidade, e-mails, redes sociais e vida digital no dia a dia.</p>
+		<!-- /wp:paragraph -->
+		<!-- wp:buttons -->
+		<div class="wp-block-buttons">
+			<!-- wp:button {"className":"btn-cyber"} -->
+			<div class="wp-block-button btn-cyber"><a class="wp-block-button__link" href="/defesa-digital">Acessar Guia</a></div>
+			<!-- /wp:button -->
+		</div>
+		<!-- /wp:buttons -->
+	</div>
+	<!-- /wp:column -->
+
+	<!-- wp:column {"className":"card-cyber"} -->
+	<div class="wp-block-column card-cyber">
+		<!-- wp:heading {"level":3} -->
+		<h3><a href="/trilha-challenge-1nf053c" style="text-decoration:none;color:#ff4d4d;">🎯 Challenge 1NF053C</a></h3>
+		<!-- /wp:heading -->
+		<!-- wp:paragraph -->
+		<p>O Challenge 1NF053C é o curso da LSCIT focado em conscientização para pessoas comuns e para o dia a dia. Acesse e confira.</p>
+		<!-- /wp:paragraph -->
+		<!-- wp:buttons -->
+		<div class="wp-block-buttons">
+			<!-- wp:button {"className":"btn-cyber"} -->
+			<div class="wp-block-button btn-cyber"><a class="wp-block-button__link" href="/trilha-challenge-1nf053c">Acessar Trilha</a></div>
+			<!-- /wp:button -->
+		</div>
+		<!-- /wp:buttons -->
+	</div>
+	<!-- /wp:column -->
+
+	<!-- wp:column {"className":"card-cyber"} -->
+	<div class="wp-block-column card-cyber">
+		<!-- wp:heading {"level":3} -->
+		<h3><a href="/cyber-recon-threat-intel" style="text-decoration:none;color:#ff4d4d;">🔍 CyberRecon</a></h3>
+		<!-- /wp:heading -->
+		<!-- wp:paragraph -->
+		<p>Veja uma coletânea muito interessante de ferramentas poderosas de cybersegurança para inteligência contra ameaças (Threat Intel).</p>
+		<!-- /wp:paragraph -->
+		<!-- wp:buttons -->
+		<div class="wp-block-buttons">
+			<!-- wp:button {"className":"btn-cyber"} -->
+			<div class="wp-block-button btn-cyber"><a class="wp-block-button__link" href="/cyber-recon-threat-intel">Acessar Recon</a></div>
+			<!-- /wp:button -->
+		</div>
+		<!-- /wp:buttons -->
+	</div>
+	<!-- /wp:column -->
+</div>
+<!-- /wp:columns -->
+]]></content:encoded>
+		<wp:post_id>10</wp:post_id>
+		<wp:post_name><![CDATA[home]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_type><![CDATA[page]]></wp:post_type>
+	</item>
+
+	<!-- 2. PAGE: DEFESA DIGITAL -->
+	<item>
+		<title>Defesa Digital</title>
+		<link>http://localhost:8080/defesa-digital</link>
+		<pubDate>2026-07-26 10:45:58</pubDate>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<guid isPermaLink="false">http://localhost:8080/?page_id=11</guid>
+		<content:encoded><![CDATA[
+<!-- wp:heading {"level":1,"style":{"color":{"text":"#ff4d4d"}}} -->
+<h1 class="wp-block-heading" style="color:#ff4d4d">Defesa Digital</h1>
+<!-- /wp:heading -->
+]]></content:encoded>
+		<wp:post_id>11</wp:post_id>
+		<wp:post_name><![CDATA[defesa-digital]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_type><![CDATA[page]]></wp:post_type>
+	</item>
+
+	<!-- 3. PARENT PAGE: TRILHA CHALLENGE 1NF053C (RESTRITA COM LOGIN) -->
+	<item>
+		<title>Trilha Challenge 1NF053C</title>
+		<link>http://localhost:8080/trilha-challenge-1nf053c</link>
+		<pubDate>2026-07-26 10:45:58</pubDate>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<guid isPermaLink="false">http://localhost:8080/?page_id=12</guid>
+		<content:encoded><![CDATA[
+<!-- wp:heading {"level":1,"style":{"color":{"text":"#ff4d4d"}}} -->
+<h1 class="wp-block-heading" style="color:#ff4d4d">TRILHA CHALLENGE 1NF053C</h1>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph {"fontSize":"medium"} -->
+<p class="has-medium-font-size">🔒 <strong>Área Exclusiva para Alunos Autenticados.</strong></p>
+<!-- /wp:paragraph -->
+]]></content:encoded>
+		<wp:post_id>12</wp:post_id>
+		<wp:post_name><![CDATA[trilha-challenge-1nf053c]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_type><![CDATA[page]]></wp:post_type>
+	</item>
+
+	<!-- 3.1 SUBMENU / CHILD PAGE: MÓDULO 1 -->
+	<item>
+		<title>Desafio - Módulo 1</title>
+		<link>http://localhost:8080/trilha-challenge-1nf053c/modulo-1</link>
+		<pubDate>2026-07-26 10:45:58</pubDate>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<guid isPermaLink="false">http://localhost:8080/?page_id=21</guid>
+		<content:encoded><![CDATA[
+<!-- wp:heading {"level":1,"style":{"color":{"text":"#ff4d4d"}}} -->
+<h1 class="wp-block-heading" style="color:#ff4d4d">DESAFIO - MÓDULO 1</h1>
+<!-- /wp:heading -->
+]]></content:encoded>
+		<wp:post_id>21</wp:post_id>
+		<wp:post_name><![CDATA[modulo-1]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>12</wp:post_parent>
+		<wp:menu_order>1</wp:menu_order>
+		<wp:post_type><![CDATA[page]]></wp:post_type>
+	</item>
+
+	<!-- 3.2 SUBMENU / CHILD PAGE: MÓDULO 2 -->
+	<item>
+		<title>Desafio - Módulo 2</title>
+		<link>http://localhost:8080/trilha-challenge-1nf053c/modulo-2</link>
+		<pubDate>2026-07-26 10:45:58</pubDate>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<guid isPermaLink="false">http://localhost:8080/?page_id=22</guid>
+		<content:encoded><![CDATA[
+<!-- wp:heading {"level":1,"style":{"color":{"text":"#ff4d4d"}}} -->
+<h1 class="wp-block-heading" style="color:#ff4d4d">DESAFIO - MÓDULO 2</h1>
+<!-- /wp:heading -->
+]]></content:encoded>
+		<wp:post_id>22</wp:post_id>
+		<wp:post_name><![CDATA[modulo-2]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>12</wp:post_parent>
+		<wp:menu_order>2</wp:menu_order>
+		<wp:post_type><![CDATA[page]]></wp:post_type>
+	</item>
+
+	<!-- 3.3 SUBMENU / CHILD PAGE: MÓDULO 3 -->
+	<item>
+		<title>Desafio - Módulo 3</title>
+		<link>http://localhost:8080/trilha-challenge-1nf053c/modulo-3</link>
+		<pubDate>2026-07-26 10:45:58</pubDate>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<guid isPermaLink="false">http://localhost:8080/?page_id=23</guid>
+		<content:encoded><![CDATA[
+<!-- wp:heading {"level":1,"style":{"color":{"text":"#ff4d4d"}}} -->
+<h1 class="wp-block-heading" style="color:#ff4d4d">DESAFIO - MÓDULO 3</h1>
+<!-- /wp:heading -->
+]]></content:encoded>
+		<wp:post_id>23</wp:post_id>
+		<wp:post_name><![CDATA[modulo-3]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>12</wp:post_parent>
+		<wp:menu_order>3</wp:menu_order>
+		<wp:post_type><![CDATA[page]]></wp:post_type>
+	</item>
+
+	<!-- 4. PAGE: CYBER RECON -->
+	<item>
+		<title>Cyber Recon - Threat Intel</title>
+		<link>http://localhost:8080/cyber-recon-threat-intel</link>
+		<pubDate>2026-07-26 10:45:58</pubDate>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<guid isPermaLink="false">http://localhost:8080/?page_id=13</guid>
+		<content:encoded><![CDATA[
+<!-- wp:heading {"level":1,"style":{"color":{"text":"#ff4d4d"}}} -->
+<h1 class="wp-block-heading" style="color:#ff4d4d">Cyber Recon - Threat Intel</h1>
+<!-- /wp:heading -->
+]]></content:encoded>
+		<wp:post_id>13</wp:post_id>
+		<wp:post_name><![CDATA[cyber-recon-threat-intel]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_type><![CDATA[page]]></wp:post_type>
+	</item>
+</channel>
+</rss>

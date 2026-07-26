@@ -1,13 +1,21 @@
 # Variáveis de ambiente sensíveis
 .env
+.env.local
+.env.*.local
 
 # Ansible temporary and retry files
 *.retry
 *.log
 .vault_pass
 
+# Pacotes temporários de build
+*.zip
+*.tar.gz
+scratch/
+
 # OS and Editor files
 .DS_Store
 .vscode/
 *.swp
 *.tmp
+

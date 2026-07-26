@@ -1,10 +1,10 @@
----
-- name: Implantação e Configuração da Pilha WordPress
-  hosts: wordpress
+- hosts: wordpress
   remote_user: leonardo
   become: yes
   roles:
-    - server
-    - php
-    - mysql
-    - wordpress
+  - server
+  - php
+  - mysql
+  - wordpress
+  #Challenge Game Infosec
+  #Teste de atualização
