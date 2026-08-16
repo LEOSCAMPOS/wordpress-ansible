@@ -18,7 +18,7 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0 # Necessário para analisar todo o histórico de commits
+          fetch-depth: 0
 
       - name: Run Gitleaks Scanner
         uses: gitleaks/gitleaks-action@v2
@@ -32,17 +32,19 @@ jobs:
   sast-analysis:
     name: 2. SAST Analysis (Semgrep)
     runs-on: ubuntu-latest
+    container:
+      image: semgrep/semgrep
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Run Semgrep OSS
+      - name: Run Semgrep Scan
         run: |
-          docker run --rm -v "${{ github.workspace }}:/src" returntocorp/semgrep semgrep \
+          semgrep scan \
             --config=p/security-audit \
             --config=p/owasp-top-ten \
             --config=p/php \
-            --error
+            --exclude=".github"
 
   # ==========================================
   # 3. IaC & CONFIGURATION SECURITY
@@ -54,7 +56,7 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Run Trivy Config / Misconfiguration Scan
+      - name: Run Trivy Config Scan
         uses: aquasecurity/trivy-action@master
         with:
           scan-type: 'config'

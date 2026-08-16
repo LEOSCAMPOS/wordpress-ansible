@@ -4,3 +4,6 @@
 *.xml
 *.tar.gz
 assets_lscit/
+
+# Ignorar workflows do GitHub para a análise SAST de código
+.github/
