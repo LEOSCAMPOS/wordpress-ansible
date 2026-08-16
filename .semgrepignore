@@ -1,0 +1,6 @@
+# Ignorar binários, documentos e arquivos de importação
+*.pdf
+*.zip
+*.xml
+*.tar.gz
+assets_lscit/

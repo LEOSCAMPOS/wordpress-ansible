@@ -1,0 +1,85 @@
+name: DevSecOps - Security & Static Code Analysis
+
+on:
+  push:
+    branches: [ "master", "main" ]
+  pull_request:
+    branches: [ "master", "main" ]
+  workflow_dispatch: # Permite disparar manualmente pelo painel do GitHub Actions
+
+jobs:
+  # ==========================================
+  # 1. SECRET SCANNING (Detecção de Segredos)
+  # ==========================================
+  secret-scan:
+    name: 1. Secret Scanning (Gitleaks)
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # Necessário para analisar todo o histórico de commits
+
+      - name: Run Gitleaks Scanner
+        uses: gitleaks/gitleaks-action@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITLEAKS_ENABLE_UPLOAD_ARTIFACT: true
+
+  # ==========================================
+  # 2. SAST (Análise Estática de Código)
+  # ==========================================
+  sast-analysis:
+    name: 2. SAST Analysis (Semgrep)
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Run Semgrep OSS
+        run: |
+          docker run --rm -v "${{ github.workspace }}:/src" returntocorp/semgrep semgrep \
+            --config=p/security-audit \
+            --config=p/owasp-top-ten \
+            --config=p/php \
+            --error
+
+  # ==========================================
+  # 3. IaC & CONFIGURATION SECURITY
+  # ==========================================
+  iac-security-scan:
+    name: 3. IaC & Misconfiguration (Trivy Config)
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Run Trivy Config / Misconfiguration Scan
+        uses: aquasecurity/trivy-action@master
+        with:
+          scan-type: 'config'
+          hide-progress: false
+          format: 'table'
+          exit-code: '0'
+          severity: 'CRITICAL,HIGH'
+
+  # ==========================================
+  # 4. CONTAINER IMAGE VULNERABILITY SCAN (SCA)
+  # ==========================================
+  container-vulnerability-scan:
+    name: 4. Container Vulnerability Scan (Trivy Image)
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        image:
+          - 'wordpress:latest'
+          - 'mysql:8.0'
+    steps:
+      - name: Scan Docker Image for CVEs
+        uses: aquasecurity/trivy-action@master
+        with:
+          image-ref: ${{ matrix.image }}
+          format: 'table'
+          exit-code: '0'
+          ignore-unfixed: true
+          severity: 'CRITICAL,HIGH'
