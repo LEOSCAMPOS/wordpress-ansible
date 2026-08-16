@@ -7,6 +7,9 @@ on:
     branches: [ "master", "main" ]
   workflow_dispatch: # Permite disparar manualmente pelo painel do GitHub Actions
 
+permissions:
+  contents: read
+
 jobs:
   # ==========================================
   # 1. SECRET SCANNING (Detecção de Segredos)
