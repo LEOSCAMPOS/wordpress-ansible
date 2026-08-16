@@ -10,6 +10,11 @@ Este repositório oferece duas formas de implantar e executar a pilha **WordPres
 
 ```text
 wordpress-ansible/
+├── .github/
+│   ├── workflows/
+│   │   └── security-ci.yml    # Pipeline DevSecOps (SAST, SCA, Secrets e Containers)
+│   └── dependabot.yml         # Automação de atualizações de dependências e imagens
+├── .semgrepignore             # Filtros de exclusão para análise estática de código
 ├── docker-compose.yml         # Orquestração dos contêineres Docker (WordPress + MySQL)
 ├── .env                       # Variáveis de ambiente sensíveis (senhas e portas do Docker)
 ├── .env.example               # Exemplo/Modelo de variáveis de ambiente
@@ -22,7 +27,7 @@ wordpress-ansible/
 │   └── wordpress/             # Role Ansible: Download e setup do WordPress
 ├── hosts                      # Inventário Ansible (IPs dos servidores de destino)
 ├── playbook.yml               # Playbook Ansible de orquestração
-├── DOCUMENTACAO_DO_PROJETO.md # Relatório descritivo do projeto e histórico de ajustes
+├── DOCUMENTACAO_DO_PROJETO.md # Documentação técnica detalhada do projeto
 └── README.md                  # Este guia de utilização
 ```
 

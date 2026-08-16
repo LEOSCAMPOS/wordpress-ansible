@@ -85,3 +85,27 @@ docker compose up -d
 http://localhost:8080
 ```
 
+---
+
+## 8. 🛡️ Esteira de DevSecOps & CI/CD Automatizada (GitHub Actions)
+
+O repositório conta com uma esteira de integração contínua com foco em segurança (DevSecOps), configurada em `.github/workflows/security-ci.yml`. A pipeline é disparada automaticamente a cada `push`, `pull_request` ou sob demanda (`workflow_dispatch`).
+
+### 🔍 Camadas de Análise de Segurança:
+
+| Camada | Ferramenta | Escopo / O que analisa |
+| :--- | :--- | :--- |
+| **1. Secret Scanning** | **Gitleaks** | Varre o histórico completo do Git em busca de credenciais, chaves de API, senhas do MySQL e tokens sensíveis. |
+| **2. SAST (Static Code Analysis)** | **Semgrep** | Analisa o código-fonte PHP (`lscit-trilha-auth-gate.php`) e scripts contra regras do OWASP Top 10 e vulnerabilidades de código. |
+| **3. IaC & Misconfiguration** | **Trivy Config** | Analisa o `docker-compose.yml`, playbooks e arquivos de configuração buscando más práticas de infraestrutura. |
+| **4. SCA & Container Security** | **Trivy Image** | Realiza varredura de CVEs de severidade *HIGH* e *CRITICAL* nas imagens Docker base (`wordpress:latest` e `mysql:8.0`). |
+
+---
+
+## 9. 🤖 Gestão Contínua de Atualizações com Dependabot
+
+Para manter as dependências, imagens e componentes da esteira sempre atualizados e livres de vulnerabilidades conhecidas, o repositório utiliza o **Dependabot** (`.github/dependabot.yml`):
+
+* **GitHub Actions:** Monitora novas versões das Actions utilizadas no workflow semanalmente.
+* **Docker Compose:** Monitora e abre Pull Requests automáticos quando houver novas versões ou correções de segurança nas imagens `wordpress` e `mysql`.
+
