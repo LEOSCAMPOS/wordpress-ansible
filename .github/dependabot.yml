@@ -1,0 +1,21 @@
+version: 2
+    updates:
+      # 1. Monitora e atualiza automaticamente as GitHub Actions (.github/workflows/)
+      - package-ecosystem: "github-actions"
+        directory: "/"
+        schedule:
+          interval: "weekly"
+          day: "monday"
+          time: "09:00"
+          timezone: "America/Sao_Paulo"
+        open-pull-requests-limit: 5
+
+      # 2. Monitora e atualiza imagens de container no docker-compose.yml
+      - package-ecosystem: "docker-compose"
+        directory: "/"
+        schedule:
+          interval: "weekly"
+          day: "monday"
+          time: "09:00"
+          timezone: "America/Sao_Paulo"
+        open-pull-requests-limit: 5
